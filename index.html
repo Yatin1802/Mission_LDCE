@@ -62,12 +62,36 @@
         </button>
     </section>
 
+    <section class="results" id="evaluation">
+
+        <div class="scoreArea" id="correctAns">
+            Correct Answer :
+        </div>
+
+        <div class="scoreArea" id="wrongAns">
+            Wrong Answer: 
+        </div>
+
+        <div class="scoreArea" id="remarks">
+            Good
+        </div>
+
+        <button id="tryAgain" class="button">
+            Try Again
+        </button>
+            
+
+    </section>
+
+   
+
 
 <script type="text/javascript">
         window.addEventListener('DOMContentLoaded',loadQuestions);
         document.addEventListener('click', check);
         document.getElementById('next').addEventListener('click',goNext);
         document.getElementById('previous').addEventListener('click',goPrevious);
+        document.getElementById('tryAgain').addEventListener('click',loadAgain);
         
 </script>
 </body>

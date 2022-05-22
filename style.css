@@ -15,6 +15,13 @@ header {
     padding: 1.5em 0.8em;
  }
 
+ button{
+     color:white;
+     background: #097d9a;
+     padding: 10px;
+     
+ }
+
 .left-title 
 {
     color:#FFF;   
@@ -106,4 +113,54 @@ header {
      border-radius: 5px;
      background-color: #c55f5f;
      color: white;
+}
+
+.results{
+    margin-top: 2rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+#evaluation{
+    margin-top: 2rem ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem; 
+}
+
+.scoreArea{
+    width: 60%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#correctAns{
+    color: white;
+    background-color: #0a5f3f;
+}
+
+#wrongAns{
+    color: white;
+    background-color: #830303;
+}
+
+#remarks{
+    font-size: 1.1rem;
+    width: 80%;
+    text-align: left;
+    background-color: rgb(232, 232, 232);
+}
+
+#tryAgain{
+    width: 30%;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 10px;
+    
 }

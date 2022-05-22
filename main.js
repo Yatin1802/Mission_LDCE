@@ -32,8 +32,9 @@ function loadQuestions()
     setQno();
     showQuestion();
     uncheckOptions();
+    
+    hideEvaluation();
 }
-
 function setQno()
 {
     if(Question_Counter<=10 && Question_Counter>0){
@@ -58,7 +59,7 @@ function uncheckOptions(){
 
 //generates Random Number array of 10 elements between 0 and the number provided
 function generateRandomNumbers(max){
-    console.log(max);
+    //console.log(max);
     var arr = [];
     let min = 0;
     while(arr.length < 11){
@@ -87,9 +88,13 @@ function loadQnA(randomArr){
         //console.log(Question_Arr);
 
         Correct_Answers_Arr.push(AOBR_QB[randomArr[i]][0]); //this is the array which contains correct answers
-       console.log(Correct_Answers_Arr);
+      // console.log(Correct_Answers_Arr);
     }
    
+}
+
+function loadAgain(){
+    location.reload();
 }
 
 //Generates one Random Number between 0 and num
@@ -115,7 +120,7 @@ function showQuestion(){
 function loadOptions(){
 
     if (Selection_Options_Arr.length<=40 && FromPrevious==0){
-        console.log('fromPre'+ FromPrevious);
+        //console.log('fromPre'+ FromPrevious);
         let size_QB = Options_DB.length-1; //Options DB contains the unique list of Department/Ministry
 
         let randomArr = generateRandomNumbers(size_QB); //generate a random array 
@@ -170,7 +175,7 @@ function showOptions(){
 function goNext(){
       
     removeGreenClass();
-    console.log('fromPrevious'+FromPrevious);
+   // console.log('fromPrevious'+FromPrevious);
     
     //the user moves to next screen only if anything has been selected 
     if(isAnythingSelected()){
@@ -217,7 +222,7 @@ function goNext(){
 function printSelectionArray(){
     
 
-        console.log(Selection_Options_Arr);
+       // console.log(Selection_Options_Arr);
     
 }
 
@@ -262,16 +267,17 @@ function store_Response(){
                     
         }
             
-        console.log("sr "+ User_Response);
+      //  console.log("sr "+ User_Response);
             
     }
     
-    console.log(User_Response);
+    //console.log(User_Response);
 }
 
 function goPrevious(){
     
     removeGreenClass();
+
     if(Question_Counter==1){
         alert('Not allowed');
 
@@ -316,13 +322,13 @@ function calculateScore(){
     let rightAns = 0;
     let wrongAns = 0;
     
-    console.log(Correct_Answers_Arr);
+   // console.log(Correct_Answers_Arr);
     for(let i = 0; i<10;i++){
 
         let userInput = parseInt(User_Response[i+1])-1;
         // console.log(Selection_Options_Arr[4*i+userInput]);
-        console.log(Correct_Answers_Arr[i]);
-        console.log('pp'+Selection_Options_Arr[4*i+userInput]);
+      //  console.log(Correct_Answers_Arr[i]);
+        //console.log('pp'+Selection_Options_Arr[4*i+userInput]);
         // console.log(User_Response[i]);
         if(Selection_Options_Arr[4*i+userInput]==Correct_Answers_Arr[i]){
             rightAns+=1;
@@ -331,13 +337,11 @@ function calculateScore(){
             wrongAns+=1;
         }
 
-        
-        
-
     }
     IsCalculationDone = true;
     setGreenclass();
-    alert("Score is "+ rightAns + " Wrong is "+wrongAns);
+    //alert("Score is "+ rightAns + " Wrong is "+wrongAns);
+    showEvaluation(rightAns,wrongAns);
    
 }
 
@@ -361,7 +365,7 @@ function setGreenclass(){
     if(radio.innerText.trim() == Correct_Answers_Arr[Qnum].trim())
     {
         
-        console.log('here here hre');
+       // console.log('here here hre');
         radio.className ='right'   
         isCorrect = true;
     }
@@ -373,9 +377,8 @@ function setGreenclass(){
 
     if(isCorrect){
          setCorrectAnswerGreen();
+
     }
-
-
 }
 
 function setCorrectAnswerGreen(){
@@ -391,7 +394,7 @@ function setCorrectAnswerGreen(){
         console.log(radio_btn.innerText.trim());
         if(radio_btn.innerText.trim() == Correct_Answers_Arr[Qnum].trim()){
             console.log("dharrrrrr");
-            removeGreenClass();
+           // removeGreenClass();
             radio_btn.classList.add('right');  
         }
 
@@ -408,6 +411,8 @@ function setRedClass(){
 
     radio.className = 'wrong';
 
+    setCorrectAnswerGreen();
+
 }
 
 function removeGreenClass(){
@@ -423,4 +428,79 @@ function removeGreenClass(){
         radio_btn.className = 'options'; //sets the class Name back to option
 
     }
+}
+
+function hideEvaluation(){
+
+    let result = document.getElementById("evaluation");
+    
+    result.style.display="none";
+    
+}
+
+function showEvaluation(right, wrong){
+
+   // if(IsCalculationDone){
+    console.log("inside Evalutation");
+        let result = document.getElementById("evaluation");
+        let correct = document.getElementById("correctAns");
+        let incorrect = document.getElementById("wrongAns");
+        let comment = document.getElementById("remarks");
+
+        correct.innerHTML = "Correct Answers : "+ right;
+        incorrect.innerHTML = "Wrong Answers : "+wrong
+        comment.innerHTML = evaluationRemarks(right);
+        setResult();
+       // result.className="results";
+   // }
+}
+
+function setResult(){
+
+    let result = document.getElementById("evaluation");
+
+    result.style.display="flex";
+    result.style.gap= "1rem";
+    result.style.alignItems = "center";
+    result.style.flexDirection="column";
+    result.style.fontSize = "0.9rem";
+    
+}
+
+function evaluationRemarks(right){
+    let remarks="check";
+    
+    switch(right){
+        
+        case 0:
+        case 1:
+        case 2:
+            remarks = 'Mood hi khraab kar dia' +'&#129326';
+            break;
+        case 3:
+        case 4:
+            remarks = 'Not good... exam clear karna hai ya sirf naam ke liye exam dena hai? ' + '&#128530';
+            break;
+        
+        case 5:
+        case 6:
+            remarks = "Improve karna padega...padh lo thoda sa aur. Aise ni ho payga" + '&#128528';
+            break;
+        
+        case 7:
+        case 8:
+            remarks = "Sahi hai... good. Umeed hai kar loge clear exam" + '&#128527';
+            break;
+        
+        case 9:
+            remarks = "Yeh hui na baat! Ab ekdum badhiya che" + '&#128524';
+            break;
+        case 10:
+            remarks = 'Perfect!!! Aag laga di' + '&#128293'+ '&#128293'+ '&#128293';
+            break;
+        default:
+            remarks = "none";
+        
+    }
+return remarks;
 }
