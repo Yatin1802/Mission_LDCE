@@ -94,7 +94,7 @@ function loadQnA(randomArr){
 }
 
 function loadAgain(){
-    location.reload();
+    window.location.reload();
 }
 
 //Generates one Random Number between 0 and num

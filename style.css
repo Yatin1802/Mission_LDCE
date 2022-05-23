@@ -162,5 +162,22 @@ header {
     margin: 1rem 0;
     border: none;
     border-radius: 10px;
-    
+
+}
+
+
+@media only screen and (min-width: 768px){
+
+    body{
+        width: 55%;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+
+    body{
+        width: 45%;
+        margin: auto;
+    }
 }
