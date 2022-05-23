@@ -64,7 +64,7 @@ header {
 
  .options{
      padding: 10px 10px;
-     width: 80%;
+     width: 90%;
      /* background-color: rgb(214, 245, 239); */
      margin: 0.4rem;
      /* border: solid 1px; */
@@ -163,7 +163,7 @@ header {
 }
 
 #tryAgain{
-    width: 30%;
+    width: 40%;
     margin: 1rem 0;
     border: none;
     border-radius: 10px;
