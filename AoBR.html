@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="#"> -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/Styles/AoBR.css">
+    <script src="questionDB.js"></script>
+    <script src="/JS/AoBR.js"></script>
+    
+    <title>Mission LDCE</title>
+</head>
+
+<body>
+    
+    <header class="header AoBR_Title">
+      
+            AoBR Complete
+    </header>
+
+    <section class="AoBR_MainContent">
+
+        <div class="selectMDO" >
+            <p>Select the Ministry/Department from the drop down</p>
+
+            <select name="MDO_DropDown" id="MDO_DropDown">
+
+
+            </select>
+
+        </div>
+
+        <div class="workAllocated">
+
+            <div>
+                <p id="work_subHeading">The <span id="name_mdo"></span> has the following allocation of business:</p>
+            </div>
+            
+
+            <ul id="list_work">
+
+            </ul>
+
+        </div>
+
+    </section>
+
+    <script type="text/javascript">
+
+        window.addEventListener('DOMContentLoaded',loadMDO);
+        document.getElementById('MDO_DropDown').addEventListener('change',loadWorkAllocation);
+
+    </script>
+
+</body>
+
+</html>

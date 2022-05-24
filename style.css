@@ -96,7 +96,7 @@ header {
 .right{
 
     padding: 10px 10px;
-     width: 80%;
+     width: 90%;
      /* background-color: rgb(214, 245, 239); */
      margin: 0.4rem;
      /* border: solid 1px; */
@@ -109,7 +109,7 @@ header {
 
 .wrong{
     padding: 10px 10px;
-     width: 80%;
+     width: 90%;
      /* background-color: rgb(214, 245, 239); */
      margin: 0.4rem;
      /* border: solid 1px; */
@@ -170,6 +170,23 @@ header {
 
 }
 
+.goAOBR{
+    width: 50%;
+    background-color: rgb(30, 102, 157);
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 1rem;
+        
+}
 
 @media only screen and (min-width: 768px){
 
