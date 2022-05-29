@@ -67,7 +67,7 @@ li{
     list-style-type:decimal;
     padding-left: 2rem;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 4rem;
     max-height: 70vh;
     color: rgb(59, 59, 59);
     background: rgb(238, 247, 249);
@@ -94,6 +94,10 @@ footer{
     padding: 0.8em 0.8em;
     margin-top:1rem;
     color: white;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
 }
 
 .footer_main{
@@ -106,7 +110,33 @@ footer{
 
 }
 
+
 a{
     font-size: 0.9rem;
     text-align: center;
+}
+
+@media only screen and (min-width: 768px){
+    footer{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 55%;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+
+    footer{
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 45%;
+        margin: auto;
+        /* margin-top: 2rem; */
+    }
+
 }
