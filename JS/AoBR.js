@@ -40,9 +40,21 @@ function loadWorkAllocation(){
             for(let j = 0; j<num_work_items;j++){
                 let para = document.createElement('li');
                 para.innerHTML = AOBR_QB[i][1][j];
-                bulletList.appendChild(para);
+
+               
+
+                //This code bolds the important work allocation items
+                if(para.innerHTML.substring(0,1)=="*"){
+                    para.style.fontWeight="bold";
+                    let strlen = para.innerHTML.length; // the length is needed to slice the string
+                    para.innerHTML = para.innerHTML.substring(1,strlen); // The * is being removed
+                }  
+                bulletList.appendChild(para);              
+                
             }
         }
+
+        
     }
 
     updateSubHeading(mdoName);
