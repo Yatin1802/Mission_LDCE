@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Styles/AoBR.css">
     <link rel="stylesheet" href="Styles/lookup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="questionDB.js"></script>
     <script src="JS/AoBR_lookup.js"></script>
     <!-- <script src="JS/AoBR.js"></script> -->
@@ -20,7 +21,7 @@
     
     <header class="header AoBR_Title">
       
-            AoBR Subject Lookup
+            AoBR Subject Lookup 
     </header>
 
     <section class="AoBR_MainContent">
@@ -31,14 +32,14 @@
         
         <div id="search_field">
             
-            <label for="search_input">Enter a keyword</label>
+            <label for="search_input">Enter a keyword  </label>
             <input type="text" id="search_input" placeholder="Type 3 or more letters">    
         </div>
 
         <section>
 
             <table id="lookup_results">
-                <th class="table_header">Subject</th>
+                <th class="table_header" style="min-width:60%">Subject (with matching keyword)</th>
                 <th class="table_header">Name of the Ministry/Department</th>
 
                 <tr>
@@ -49,6 +50,9 @@
 
     </section>
 
+    <div id="noMatch">
+    
+    </div>
 
     <div class="margin_Footer" style="margin-top: 5rem;">
 

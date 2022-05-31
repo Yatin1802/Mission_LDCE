@@ -23,6 +23,7 @@ function loadAllWorkItems(){
 function loadLookupTable(){
 
     resetTable();
+    document.getElementById('noMatch').innerHTML="";
 
     if(document.getElementById('search_input').value.length>2)
     {
@@ -43,7 +44,12 @@ function loadLookupTable(){
     //     resetTable();
     // }
    
-   
+   if(document.getElementById('lookup_results').rows.length<=1){
+       if(document.getElementById('search_input').value.length>2){
+           document.getElementById('noMatch').innerHTML="No Match Found";
+       }
+    
+   }
 
 
     //console.log(filteredArr);
@@ -73,12 +79,12 @@ function addRow(name, arr){
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
 
-        cell1.innerHTML = name;
-        cell2.innerHTML = arr[i-1];
-        if(cell2.innerHTML.substring(0,1)=="*"){
-            cell2.style.fontWeight="bold";
-            let strlen = cell2.innerHTML.length; // the length is needed to slice the string
-            cell2.innerHTML = cell2.innerHTML.substring(1,strlen); // The * is being removed
+        cell2.innerHTML = name;
+        cell1.innerHTML = arr[i-1];
+        if(cell1.innerHTML.substring(0,1)=="*"){
+            cell1.style.fontWeight="bold";
+            let strlen = cell1.innerHTML.length; // the length is needed to slice the string
+            cell1.innerHTML = cell1.innerHTML.substring(1,strlen); // The * is being removed
         }
 
     }
