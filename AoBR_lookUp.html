@@ -8,8 +8,10 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Styles/AoBR.css">
+    <link rel="stylesheet" href="Styles/lookup.css">
     <script src="questionDB.js"></script>
-    <script src="JS/AoBR.js"></script>
+    <script src="JS/AoBR_lookup.js"></script>
+    <!-- <script src="JS/AoBR.js"></script> -->
     
     <title>Mission LDCE</title>
 </head>
@@ -18,62 +20,35 @@
     
     <header class="header AoBR_Title">
       
-            AoBR Complete
+            AoBR Subject Lookup
     </header>
 
     <section class="AoBR_MainContent">
 
-        <div class="selectMDO" >
-            <p>Select the Ministry/Department from the drop down</p>
-
-            <select name="MDO_DropDown" id="MDO_DropDown">
-
-
-            </select>
-
-        </div>
-
-        <div class="workAllocated">
-
-            <div>
-                <p id="work_subHeading">The <span id="name_mdo"></span> has the following allocation of business:</p>
-            </div>
+        <!-- <div class="lookUp_Heading">
+            Enter a keyword for look up
+        </div> -->
+        
+        <div id="search_field">
             
-
-            <ul id="list_work">
-
-            </ul>
-
+            <label for="search_input">Enter a keyword</label>
+            <input type="text" id="search_input" placeholder="Type 3 or more letters">    
         </div>
+
+        <section>
+
+            <table id="lookup_results">
+                <th class="table_header">Subject</th>
+                <th class="table_header">Name of the Ministry/Department</th>
+
+                <tr>
+                    
+                </tr>
+            </table>
+        </section>
 
     </section>
 
-    <!-- <section class="movement">
-        <div id="previous_MDO">
-            <div>
-                Previous
-            </div>
-            
-            <div id="lastEntry">
-                Name of MDO
-            </div>
-        </div>
-
-        <div id="next_MDO">
-            <div>
-                <h5>Next</h5>
-            </div>
-            
-            <div id="nextEntry">
-                Name of MDO
-            </div>
-        </div>
-
-    </section> -->
-
-    <div class="goAOBR">
-        <a href="AoBR_lookUp.html" target="_blank">Subject wise Search</a>
-    </div>
 
     <div class="margin_Footer" style="margin-top: 5rem;">
 
@@ -98,8 +73,8 @@
 
     <script type="text/javascript">
 
-        document.addEventListener('DOMContentLoaded', loadMDO);
-        document.getElementById('MDO_DropDown').addEventListener('change',loadWorkAllocation);
+        document.addEventListener('DOMContentLoaded', loadAllWorkItems);
+        document.getElementById('search_input').addEventListener('input',loadLookupTable);
         // document.getElementById('next_MDO').addEventListener('click',showNext);
 
     </script>

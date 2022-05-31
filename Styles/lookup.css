@@ -1,0 +1,52 @@
+
+table{
+    width:95%;
+    margin: auto;
+}
+table, th, td {
+    border: 1px solid rgb(13, 110, 112);
+    border-collapse: collapse;
+
+  }
+
+tr{
+    font-size: 0.8rem;
+}
+
+th{
+    background-color: rgb(135, 203, 203);
+    
+}
+
+th, td{
+    padding: 0.2rem;
+}
+
+td{
+    background-color: azure;
+}
+
+.table_header{
+    height: 2rem;
+}
+
+#search_field{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 1rem;
+    
+}
+
+#search_input{
+    outline: none;
+    width: 80%;
+    border-radius: 5px;
+    height: 2rem;
+    padding: 5px;
+}
+
+#search_input:focus{
+    background-color: azure;
+}
