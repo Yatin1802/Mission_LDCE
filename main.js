@@ -23,8 +23,14 @@ function check(e){
     console.log(e.target.closest('#optionsBox'));
 
     if(e.target.closest('.main-content')!=null){
+       
+       
         makeVisible();
         
+    }
+
+    if (e.target.closest('#optionShow')!=null){
+        makeVisible();
     }
 }
 
@@ -37,13 +43,15 @@ function makeVisible(){
         //document.getElementById('optionsBox').style.color='rgb(66, 66, 66)';
         //isVisible = false;
         document.getElementById('optionsBox').style.visibility='visible';
+        document.getElementById('optionShow').style.visibility='hidden';
     
     
 }
 
 function hideOptions(){
     //document.getElementById('optionsBox').style.color='rgb(194, 226, 235)';
-    document.getElementById('optionsBox').style.visibility="hidden";
+    document.getElementById('optionsBox').style.visibility='hidden';
+    document.getElementById('optionShow').style.visibility='visible';
 }
 
 
@@ -135,6 +143,12 @@ function showQuestion(){
     let question = document.getElementById("questionTitle");
 
     question.innerHTML = Question_Arr[Question_Counter-1];
+
+    if(question.innerHTML.substring(0,1)=="*"){
+        //question.style.fontWeight="bold";
+        let strlen = question.innerHTML.length; // the length is needed to slice the string
+        question.innerHTML = question.innerHTML.substring(1,strlen); // The * is being removed
+    }  
     
     loadOptions();
          

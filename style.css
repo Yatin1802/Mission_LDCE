@@ -8,6 +8,7 @@
 body{
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
+    position: relative;
 }
 header {
     
@@ -199,9 +200,16 @@ a{
    
 }
 
-.optionShow{
+#optionShow{
     /* margin: auto; */
     text-align: center;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 50%;
+    /* bottom: 50%; */
+    right: 40%;
+    left: 40%;
+    
 }
 
 @media only screen and (min-width: 1200px){
