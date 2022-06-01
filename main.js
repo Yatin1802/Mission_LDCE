@@ -6,6 +6,7 @@ var User_Response = []; // stores the user selection
 var Question_Counter = 1; //counter for taking care of the question and answer and storing state
 var IsCalculationDone = false;
 var FromPrevious = 0; //this flag tells if we are moving from previous to next then it won't load options
+var isVisible = false;
 
 function check(e){
 
@@ -18,6 +19,31 @@ function check(e){
             e.target.firstElementChild.checked = true;
         }
     }
+
+    console.log(e.target.closest('#optionsBox'));
+
+    if(e.target.closest('.main-content')!=null){
+        makeVisible();
+        
+    }
+}
+
+function makeVisible(){
+    //document.getElementById('optionsBox').style.visibility = "hidden";
+//    if(document.getElementById('optionsBox').hidden){
+
+//    };
+  
+        //document.getElementById('optionsBox').style.color='rgb(66, 66, 66)';
+        //isVisible = false;
+        document.getElementById('optionsBox').style.visibility='visible';
+    
+    
+}
+
+function hideOptions(){
+    //document.getElementById('optionsBox').style.color='rgb(194, 226, 235)';
+    document.getElementById('optionsBox').style.visibility="hidden";
 }
 
 
@@ -34,6 +60,7 @@ function loadQuestions()
     uncheckOptions();
     
     hideEvaluation();
+    hideOptions();
 }
 function setQno()
 {
@@ -112,6 +139,7 @@ function showQuestion(){
     loadOptions();
          
     showOptions();
+    hideOptions();
     //loadOptions();
 
 }
@@ -157,6 +185,7 @@ function loadOptions(){
 
 function showOptions(){
 
+
     let radioID = "option";
 
     for(let i = 1; i<=4;i++){
@@ -173,7 +202,9 @@ function showOptions(){
 
 //when the next button is clicked it loads the next question 
 function goNext(){
-      
+    
+   
+    //document.getElementById('optionsBox').style.visibility="hidden";
     removeGreenClass();
    // console.log('fromPrevious'+FromPrevious);
     
@@ -198,6 +229,7 @@ function goNext(){
             showQuestion(); //it will show that next question
             if(User_Response.length>Question_Counter){
                 restoreSelection();
+                makeVisible();
             } 
             else{
                 uncheckOptions();
