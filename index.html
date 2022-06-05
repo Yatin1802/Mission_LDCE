@@ -90,13 +90,13 @@
         <div class="subscribeSection" id="subscribeInfo">
 
             <div>
-                <div>Subscription Starting from Rs 499/-*</div>
-                <div id="btn_pricing">*Click to see Pricing Details</div>
+                <div>Subscription Starting from Rs 299/-</div>
+                <div id="btn_pricing">Click to see Pricing Details</div>
             </div>
-            <div class="pricingDetails">
+            <!-- <div class="pricingDetails">
                 <h4>Rs 500/- for 6 months</h4>
                 <h4>Rs 800/- for 12 months</h4>
-            </div>
+            </div> -->
         </div>
 
 
@@ -153,6 +153,18 @@
     </section>
    
 
+    <div id="myModal" class="modal">
+        
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- <p>Fill the details below</p> -->
+
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdLTZ4PmJ2ifzzMiBuNmpckGFO0qsKEcy8smacYz5yKa_nydQ/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" scrolling="auto" marginwidth="0"></iframe>
+
+        </div>
+
+    </div>
+    
 
    <div class="margin_Footer" style="margin-top: 5rem;">
 
@@ -183,12 +195,22 @@
         window.addEventListener('DOMContentLoaded',loadSettings);
         document.getElementById('signIn').addEventListener('click',checkValidity);
         document.getElementById('signIn').addEventListener('keydown',checkValidity1);
+        document.getElementById('btn_pricing').addEventListener('click',openModal);
+        document.getElementsByClassName("close")[0].addEventListener('click',closeModal);
         // document.addEventListener('click', check);
         // document.getElementById('next').addEventListener('click',goNext);
         // document.getElementById('previous').addEventListener('click',goPrevious);
         // document.getElementById('tryAgain').addEventListener('click',loadAgain); 
      //   document.getElementById('showTheOptions').addEventListener('click',makeVisible); 
-        
+       
+    window.onclick = function(event) {
+         
+        if (event.target == document.getElementById('myModal')) 
+         {
+           closeModal();
+         }
+    }
+
 </script>
 </body>
 </html>
