@@ -208,6 +208,7 @@ iframe{
       /* background-color: honeydew; */
       /* border-radius: 5px; */
       font-weight: bolder;
+      display: block;
   }
 
 
