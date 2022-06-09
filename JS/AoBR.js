@@ -1,21 +1,38 @@
 
+//  import { loginSuccess } from "../variables.js";
 
 function loadMDO(){
 
-    document.getElementById('work_subHeading').style.display = "none";
-    //console.log(Options_DB);
-    let mdoCount = Options_DB.length;
+    console.log(localStorage.getItem('loginSuccess'));
 
-    let mdoDropDown = document.getElementById("MDO_DropDown");
+    if(localStorage.getItem('loginSuccess')=='true'|| localStorage.getItem('loginSuccess')=='false')
+    {
+        console.log('here here heer');
 
-    for(let i =0;i<mdoCount;i++){
-
-        let option = document.createElement('option');
-        option.text = Options_DB[i];
-        mdoDropDown.add(option);
+        document.getElementById('work_subHeading').style.display = "none";
+        //console.log(Options_DB);
+        let mdoCount = Options_DB.length;
+    
+        let mdoDropDown = document.getElementById("MDO_DropDown");
+    
+        for(let i =0;i<mdoCount;i++){
+    
+            let option = document.createElement('option');
+            option.text = Options_DB[i];
+            mdoDropDown.add(option);
+        }
+        
+        loadWorkAllocation();
+        hideNoLoading();
     }
 
-    loadWorkAllocation();
+    else{
+        //console.log('log out ho gya hai');
+        showNoLoading();
+    }
+
+  
+    
 }
 
 
@@ -58,7 +75,19 @@ function loadWorkAllocation(){
     }
 
     updateSubHeading(mdoName);
+    
     // nextMDO();
+}
+
+function showNoLoading(){
+    document.getElementsByClassName('AoBR_MainContent')[0].style.display = 'none';
+    document.getElementsByClassName('itemsOnLogOut')[0].style.display = 'flex';
+}
+
+function hideNoLoading(){
+
+    document.getElementsByClassName('AoBR_MainContent')[0].style.display = 'block';
+    document.getElementsByClassName('itemsOnLogOut')[0].style.display = 'none';
 }
 
 function clearPreviousWorkItems(){

@@ -189,6 +189,30 @@ a{
         
 }
 
+.itemsOnLogOut{
+    background-color: aliceblue;
+    font-size: 1.1 rem;
+    color: rgb(87, 86, 86);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.itemsOnLogOut a{
+    color: rgb(243, 252, 252);
+    font-size: large;
+    border: solid 1px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(8, 86, 113);
+    
+    
+   
+}
+
 @media only screen and (min-width: 768px){
 
     body{

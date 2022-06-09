@@ -6,10 +6,19 @@ var DBsize = AOBR_QB.length;
 
 function loadAllWorkItems(){
 
-    let inputStr = document.getElementById('search_input'); 
-    if(inputStr.value.length>0){
-        inputStr.value='';
+    if(localStorage.getItem('loginSuccess')=='true'){
+         let inputStr = document.getElementById('search_input'); 
+        if(inputStr.value.length>0){
+            inputStr.value='';
+        }
+
+        hideNoLoading();
     }
+    else{
+        showNoLoading();
+    }
+
+   
 }
 
 // function checkIntegrity(){
@@ -19,6 +28,18 @@ function loadAllWorkItems(){
         
 //     }
 // }
+
+
+function showNoLoading(){
+    document.getElementsByClassName('AoBR_MainContent')[0].style.display = 'none';
+    document.getElementsByClassName('itemsOnLogOut')[0].style.display = 'flex';
+}
+
+function hideNoLoading(){
+
+    document.getElementsByClassName('AoBR_MainContent')[0].style.display = 'block';
+    document.getElementsByClassName('itemsOnLogOut')[0].style.display = 'none';
+}
 
 function loadLookupTable(){
 
