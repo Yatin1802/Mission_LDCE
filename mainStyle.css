@@ -60,7 +60,7 @@ h4{
 
 #loginSection{
     /* background: linear-gradient(330deg, rgb(22, 228, 217) 0%, rgb(61, 34, 114) 100%); */
-    background: linear-gradient(150deg, rgb(254,65,100) 0%, rgb(243, 181, 173) 100%);
+    background: linear-gradient(150deg, rgb(236, 113, 135) 0%, rgb(251, 203, 196) 100%);
     padding: 1rem;
     margin-top: 1rem;
     display: flex;
@@ -117,7 +117,7 @@ h4{
 
 .subscribeSection{
     /* background: linear-gradient(330deg, rgb(22, 228, 217) 0%, rgb(61, 34, 114) 100%); */
-    background: linear-gradient(150deg, rgb(254,65,100) 0%, rgb(243, 181, 173) 100%);
+    background: linear-gradient(150deg, rgb(236, 113, 135) 0%, rgb(251, 203, 196) 100%);
     color: rgb(251, 230, 230);
     padding: 2rem 1rem;
     text-align: center;
@@ -221,7 +221,7 @@ iframe{
   }
 
   footer{
-    background: linear-gradient(150deg, rgb(254,65,100) 0%, rgb(243, 181, 173) 100%);
+    background: linear-gradient(150deg, rgb(236, 113, 135) 0%, rgb(251, 203, 196) 100%);
   }
 
 /* ****Modal button****** */

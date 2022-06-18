@@ -2,7 +2,8 @@
 
 function loadMDO(){
 
-    document.getElementById('work_subHeading').style.display = "none";
+    // if(localStorage.getItem('sessionValidity')=='true'){
+          document.getElementById('work_subHeading').style.display = "none";
     //console.log(Options_DB);
     let mdoCount = Options_DB.length;
 
@@ -16,6 +17,13 @@ function loadMDO(){
     }
 
     loadWorkAllocation();
+    // }
+
+    // else{
+    //     location.assign('../index.html');
+    // }
+
+  
 }
 
 
