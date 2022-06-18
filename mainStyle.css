@@ -50,6 +50,7 @@ h4{
     background-color:rgb(245, 209, 216);
     color: rgb(84, 84, 83);
     padding: 0.7rem 0;
+    transition: all 1s ease-in;
 }
 
 #loginPara{

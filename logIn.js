@@ -8,6 +8,7 @@ function loadSettings(){
    document.getElementById('userName').value='';
    document.getElementById('msgOnLogin').style.display='none';
    localStorage.setItem('sessionValidity','false');
+   
 
 }
 
@@ -40,7 +41,7 @@ function hideAfterLogIn(){
     document.getElementById('mainIntro').style.display='none';
     let uName = document.getElementById('userName').value;
     document.getElementById("packDetails").innerHTML = "Welcome " + uName+ ", you now have access to the following:"
-
+    setTimeout(hideBanner,2000);
 }
 
 function loadValidUsers(){
@@ -128,6 +129,15 @@ function isEmpty(){
             }
     }
     
+}
+
+//this function hides the logged in div after 3 seconds
+
+function hideBanner(){
+   
+    // document.getElementById('msgOnLogin').style.transition = "all 1s ease-out";
+    document.getElementById('msgOnLogin').style.opacity = 0;
+    setTimeout(()=>{document.getElementById('msgOnLogin').style.display = 'none';},1000); 
 }
 
 //This function checks if the usernanme is valid
