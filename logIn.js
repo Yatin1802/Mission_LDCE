@@ -1,7 +1,5 @@
 
 var validUser = [];
-
-
 function loadSettings(){
    closeModal();
    loadValidUsers();
@@ -9,14 +7,8 @@ function loadSettings(){
 
    document.getElementById('userName').value='';
    document.getElementById('msgOnLogin').style.display='none';
+   localStorage.setItem('sessionValidity','false');
 
-   localStorage.setItem('loginSuccess', 'false');
-   
-}
-
-function logOut()
-{
-    localStorage.setItem('loginSuccess', 'false');
 }
 
 function hideButtons(){
@@ -37,6 +29,7 @@ function showButtons(){
     list.style.display = 'block';
     quiz.style.display = 'block';
     lookup.style.display = 'block';
+    localStorage.setItem('sessionValidity','true');
 }
 
 //after successful login, some elements needs to be removed.
@@ -87,30 +80,23 @@ function checkValidity(){
 
                 if(uName == Global_C[i][0]){
                     if(enteredPassCode == Global_C[i][1]){
-                        
-                        localStorage.setItem('loginSuccess','true');
                         document.getElementById('msgOnLogin').style.display='block';
                         document.getElementById('msgOnLogin').innerHTML = "Logged in Successfully!"
                         showButtons();
                         isValidPassword = true;
                         hideAfterLogIn();
-                        
                     }
                 }
             
             }
-
-            //console.log("yahan"+ loginSuccess);
             if(!isValidPassword){
                 alert("The Password is incorrect");
-                logOut();
             }
 
 
         }
 
         else{
-            logOut();
             alert('The Username is not Valid');
         }
         
@@ -131,7 +117,7 @@ function isEmpty(){
     }
 
     else{
-      //  console.log("here");
+        console.log("here");
         if(document.getElementById('passCode').value==='')
             {
                 return true;
@@ -150,7 +136,6 @@ function isUserValid(){
     let enteredUserName = document.getElementById('userName').value;
     
     let whetherFound = false;
-    
     for(let i=0;i<validUser.length;i++){
         if(enteredUserName==validUser[i]){
             whetherFound = true;

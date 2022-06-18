@@ -4,7 +4,7 @@
 
 .main-title{
 
-    color: whitesmoke;
+    color: rgb(133, 18, 18);
     margin: auto;
 
 }
@@ -32,33 +32,35 @@ h4{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background: rgb(227, 247, 249);
+    background: linear-gradient(0deg, rgb(255, 212, 212) 0%, rgb(255, 255, 255) 100%);
     padding: 0.7rem 0.7rem;
+    color: rgb(66, 60, 60);
    
 }
 
 #mainIntro span{
     font-weight: bold;
-    color: rgb(7, 85, 97);
+    color: rgb(147, 71, 64);
 }
 
 #msgOnLogin{
     font-size: 1rem;
     margin: auto;
     text-align: center;
-    background-color: rgb(161, 231, 203);
+    background-color:rgb(245, 209, 216);
     color: rgb(84, 84, 83);
     padding: 0.7rem 0;
 }
 
 #loginPara{
-    color: azure;
+    color: rgb(252, 234, 228);
     text-align: center;
     font-size: 0.9rem;
 }
 
 #loginSection{
-    background: linear-gradient(330deg, rgb(22, 228, 217) 0%, rgb(61, 34, 114) 100%);
+    /* background: linear-gradient(330deg, rgb(22, 228, 217) 0%, rgb(61, 34, 114) 100%); */
+    background: linear-gradient(150deg, rgb(254,65,100) 0%, rgb(243, 181, 173) 100%);
     padding: 1rem;
     margin-top: 1rem;
     display: flex;
@@ -101,8 +103,9 @@ h4{
     border: none;
     width: 40%;
     text-align: center;
-    background: linear-gradient(330deg, rgb(108, 218, 233) 0%, rgb(227, 228, 222) 100%);
-    color: rgb(6, 63, 66);
+    /* background: linear-gradient(330deg, rgb(108, 218, 233) 0%, rgb(227, 228, 222) 100%); */
+    background: linear-gradient(0deg, rgb(242, 192, 192) 0%, rgb(244, 224, 224) 100%);
+    color: rgb(118, 59, 39);
     border-radius: 5px;
     margin-top: 10px;
 }
@@ -113,8 +116,9 @@ h4{
 
 
 .subscribeSection{
-    background: linear-gradient(330deg, rgb(22, 228, 217) 0%, rgb(61, 34, 114) 100%);
-    color: white;
+    /* background: linear-gradient(330deg, rgb(22, 228, 217) 0%, rgb(61, 34, 114) 100%); */
+    background: linear-gradient(150deg, rgb(254,65,100) 0%, rgb(243, 181, 173) 100%);
+    color: rgb(251, 230, 230);
     padding: 2rem 1rem;
     text-align: center;
     /* border-radius: 10px; */
@@ -125,21 +129,20 @@ h4{
 iframe{
     /* align-items: center; */
     padding: 1rem 0;
-    /* margin: 1rem 0; */
-    font-size: 1rem;
-    width: 100%;
     margin: 1rem 0;
-/*     font-size: 0.8rem; */
+    font-size: 0.8rem;
 }
 
 #btn_pricing{
-    width: 80%;
-    margin: 0.7rem auto;
-    background: linear-gradient(330deg, rgb(108, 218, 233) 0%, rgb(227, 228, 222) 100%);
-    color: rgb(11, 94, 93);
+    width: 60%;
+    margin: 0.5rem auto;
+    /* background: linear-gradient(330deg, rgb(108, 218, 233) 0%, rgb(227, 228, 222) 100%); */
+    background: linear-gradient(0deg, rgb(242, 192, 192) 0%, rgb(244, 224, 224) 100%);
+    color: rgb(118, 59, 39);
     padding: 0.3rem;
     border-radius: 5px;
     font-size: 0.9rem;
+    margin-top: 1.5rem;
     
 }
 
@@ -149,7 +152,7 @@ iframe{
 
 .packageDetails{
     /* background: linear-gradient(330deg, rgb(192, 232, 230) 0%, rgb(148, 99, 245) 100%); */
-    color: rgb(83, 82, 82);
+    color: rgb(122, 51, 51);
     padding:1rem;
     text-align: center;
     border-radius: 10px;
@@ -160,6 +163,7 @@ iframe{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    /* background: linear-gradient(0deg, rgb(244, 238, 238) 0%, rgb(244, 224, 224) 100%); */
 }
 
 .card {
@@ -170,11 +174,14 @@ iframe{
     display: flex;
     gap: 1rem;
     flex-direction: column;
-    background: linear-gradient(330deg, rgb(234, 255, 255) 0%, rgb(237, 247, 247) 100%);
+    /* background: linear-gradient(330deg, rgb(234, 255, 255) 0%, rgb(237, 247, 247) 100%); */
+    background: linear-gradient(0deg, rgba(244, 158, 158, 0.26) 0%, rgba(243, 111, 137, 0.696) 100%);
     width: 70%;
-    color: rgb(83, 82, 81);
+    color: rgb(203, 128, 128);
     padding: 0.5rem;
     border-radius: 15px;
+
+  
   }
 
   .cardTitle{
@@ -184,6 +191,7 @@ iframe{
     gap: 0.3rem;
     font-weight: bold;
     flex-direction: column;
+    color: rgb(232, 85, 110);
   }
 
   .cardDescription{
@@ -191,8 +199,9 @@ iframe{
   }
 
   .card a{
-    background: linear-gradient(330deg, rgb(108, 218, 233) 0%, rgb(227, 228, 222) 100%);
-    color: rgb(1, 113, 83);
+    /* background: linear-gradient(330deg, rgb(108, 218, 233) 0%, rgb(227, 228, 222) 100%); */
+    background: linear-gradient(0deg, rgb(232, 181, 181) 0%, rgb(250, 240, 242) 100%);
+    color: rgb(139, 60, 44);
     border-radius: 10px;
     width: 60%;
     margin: auto;
@@ -200,21 +209,19 @@ iframe{
     margin-bottom: 10px;
   }
 
-  #trialText{
-      color: firebrick;
-      font-size: 0.8rem;
-      padding: 0.1rem 0.4rem;
-      margin-top: 0.2rem;
-      /* background-color: honeydew; */
-      /* border-radius: 5px; */
-      font-weight: bolder;
-      display: block;
+  .free{
+    color: rgb(243, 40, 74);
+    display: block;
+    font-size: 0.7rem;
   }
-
 
 
   footer a{
       color:white;
+  }
+
+  footer{
+    background: linear-gradient(150deg, rgb(254,65,100) 0%, rgb(243, 181, 173) 100%);
   }
 
 /* ****Modal button****** */
@@ -236,7 +243,7 @@ iframe{
   
   /* Modal Content */
   .modal-content {
-    background-color: #f1fafc;
+    background-color: #fefefe;
     margin: auto;
     /* padding: 20px; */
     border: 1px solid #888;
@@ -257,13 +264,6 @@ iframe{
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
-
-  @media only screen and (min-width: 1000px){
-
-    .modal-content{
-        width: 45%;
-    }
   }
 
 

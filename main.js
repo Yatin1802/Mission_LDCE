@@ -54,41 +54,28 @@ function hideOptions(){
     document.getElementById('optionShow').style.visibility='visible';
 }
 
-function showNoLoading(){
-    document.getElementsByClassName('main-content')[0].style.display = 'none';
-    document.getElementsByClassName('itemsOnLogOut')[0].style.display = 'flex';
-}
-
-function hideNoLoading(){
-
-    document.getElementsByClassName('main-content')[0].style.display = 'block';
-    document.getElementsByClassName('itemsOnLogOut')[0].style.display = 'none';
-}
-
 
 function loadQuestions()
 {
-    const size_QB = AOBR_QB.length; //this measures the no. of row entries in the array
+
+    if(localStorage.getItem('sessionValidity')=='true'){
+       const size_QB = AOBR_QB.length; //this measures the no. of row entries in the array
     const randomArr = generateRandomNumbers(size_QB-1); // generates a random number array for selecting questions
-   
-    if(localStorage.getItem('loginSuccess')=='true')
-    {
-        console.log(localStorage.getItem('loginSuccess'));
-        loadQnA(randomArr); //this loads the question and correct answers array
-        User_Response.fill(0);
-    //set the Question Counter
-        setQno();
-        showQuestion();
-        uncheckOptions();
-        
-        hideEvaluation();
-        hideOptions();
-        hideNoLoading();
-    }
-    else{
-        showNoLoading();
+    
+    loadQnA(randomArr); //this loads the question and correct answers array
+    User_Response.fill(0);
+   //set the Question Counter
+    setQno();
+    showQuestion();
+    uncheckOptions();
+    
+    hideEvaluation();
+    hideOptions(); 
     }
 
+    else{
+        window.location.assign('index.html');
+    }
     
 }
 function setQno()

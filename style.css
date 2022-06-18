@@ -9,10 +9,12 @@ body{
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     position: relative;
+    /* background-color:rgb(255, 238, 236); */
 }
 header {
     
-    background: linear-gradient(330deg, rgba(21,148,142,1) 0%, rgba(39,3,113,1) 100%);
+    /* background: linear-gradient(330deg, rgba(21,148,142,1) 0%, rgba(39,3,113,1) 100%); */
+    background: linear-gradient(150deg, rgb(254,65,100) 0%, rgb(243, 181, 173) 100%);
     padding: 1.5em 0.8em;
  }
 
@@ -25,7 +27,7 @@ header {
 
 .left-title 
 {
-    color:#FFF;   
+    color:rgb(255, 255, 255);   
     margin:0 0.3rem;   
 }
 
@@ -51,7 +53,7 @@ header {
 
  .question{
      padding: 0.5rem;
-     background-color: rgb(234, 245, 245);
+     background-color: rgb(252, 213, 221);
  }
 
 .options-container{
@@ -69,7 +71,7 @@ header {
      /* background-color: rgb(214, 245, 239); */
      margin: 0.4rem;
      /* border: solid 1px; */
-     background-color: rgb(194, 226, 235);
+     background-color: rgb(252, 213, 221);
      font-size: 0.9rem;
      border-radius: 5px;
           
@@ -87,7 +89,8 @@ header {
 
     padding:0.8rem 0.3rem;
     color: white;
-    background: linear-gradient(330deg, rgba(90,185,180,1) 0%, rgba(15,140,137,1) 100%);
+    /* background: linear-gradient(330deg, rgba(90,185,180,1) 0%, rgba(15,140,137,1) 100%); */
+    background: linear-gradient(0deg, rgb(222, 86, 86) 0%, rgb(250, 155, 174) 100%);
     border: none;
     border-radius: 10px;
     width: 25%; 
@@ -188,30 +191,10 @@ a{
     padding: 0.5rem;
         
 }
-
-.itemsOnLogOut{
-    background-color: aliceblue;
-    font-size: 1.1 rem;
-    color: rgb(87, 86, 86);
-    padding: 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.itemsOnLogOut a{
-    color: rgb(243, 252, 252);
-    font-size: large;
-    border: solid 1px;
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    background-color: rgb(8, 86, 113);
+footer{
+    background: linear-gradient(90deg, rgb(254,65,100) 0%, rgb(243, 181, 173) 100%);
     
-    
-   
-}
+  }
 
 @media only screen and (min-width: 768px){
 

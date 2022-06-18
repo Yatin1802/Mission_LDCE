@@ -4,7 +4,7 @@ table{
     margin: auto;
 }
 table, th, td {
-    border: 1px solid rgb(66, 164, 167);
+    border: 1px solid rgb(154, 57, 76);
     border-collapse: collapse;
 
   }
@@ -14,8 +14,8 @@ tr{
 }
 
 th{
-    background-color: rgb(138, 210, 210);
-    color: rgb(70, 70, 70);
+    background-color: rgb(247, 140, 161);
+    color: rgb(121, 19, 19);
     
 }
 
@@ -24,8 +24,8 @@ th, td{
 }
 
 td{
-    background-color: azure;
-    color: rgb(71, 71, 71);
+    background-color: rgb(250, 241, 243);
+    color: rgb(126, 46, 46);
 }
 
 .table_header{
@@ -50,12 +50,12 @@ td{
 }
 
 #search_input:focus{
-    background-color: azure;
+    background-color: rgb(255, 235, 239);
 }
 
 #noMatch{
     margin: auto;
-    color: rgb(12, 107, 102);
+    color: rgb(143, 47, 66);;
     text-align: center;
     padding: 2rem 1rem;
 }
