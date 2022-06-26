@@ -1,5 +1,6 @@
 
 var validUser = [];
+
 function loadSettings(){
    closeModal();
    loadValidUsers();
@@ -8,7 +9,9 @@ function loadSettings(){
    document.getElementById('userName').value='';
    document.getElementById('msgOnLogin').style.display='none';
    localStorage.setItem('sessionValidity','false');
-   
+//    pwdValue('trial41');
+    document.getElementById("check").checked=false;
+    myFunction();
 
 }
 
@@ -58,7 +61,7 @@ function loadValidUsers(){
 }
 
 function checkValidity(){
-
+    
     console.log(document.getElementById('userName').value);
     console.log(document.getElementById('passCode').value);
     console.log(document.getElementById('passCode'));
@@ -76,11 +79,14 @@ function checkValidity(){
                 console.log("thik hai");
             let uName = document.getElementById('userName').value;
             let enteredPassCode = document.getElementById('passCode').value;
+           
+            let nPwd = pwdValue(enteredPassCode);
+            
             let isValidPassword = false;
             for(let i =0;i<Global_C.length;i++){
 
                 if(uName == Global_C[i][0]){
-                    if(enteredPassCode == Global_C[i][1]){
+                    if(nPwd == Global_C[i][1]){
                         document.getElementById('msgOnLogin').style.display='block';
                         document.getElementById('msgOnLogin').innerHTML = "Logged in Successfully!"
                         showButtons();
@@ -102,6 +108,21 @@ function checkValidity(){
         }
         
     }
+
+}
+
+function pwdValue(pStr){
+
+    let lastTwo = pStr.slice(-2);
+    let pt0 = pStr.slice(0,pStr.length-2);
+    let pt1 = lastTwo.codePointAt(0);
+    let pt2 = lastTwo.codePointAt(1);
+    console.log(pt0+pt1+pt2);
+    return pt0+pt1+pt2;
+
+    // console.log(lastTwo);
+    // console.log(lastTwo.codePointAt(0));
+    // console.log(lastTwo.codePointAt(1));
 
 }
 
@@ -165,3 +186,29 @@ function closeModal(){
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
 }
+
+//Function for Side Menu
+function myFunction() {
+
+    var x = document.getElementById("myLinks");
+    var menu = document.getElementById("check");
+    var menuLabel = document.getElementById("H-menu");
+
+    x.style.visibility='hidden';
+    console.log(menu.checked);
+    if (menu.checked == true) {
+      // x.style.display = "block";
+      x.style.visibility='visible';
+      x.style.transform = "translateX(0%)";
+      menuLabel.style.transition = "all 0.4s ease-in";
+      menuLabel.style.transform = "translateX(240px)";
+      }
+
+    if (menu.checked == false) {
+        x.style.visibility='hidden';
+        x.style.transform = "translateX(-110%)";
+        menuLabel.style.transform = "translateX(0vw)";
+     
+      // x.style.display = "none";
+    }
+  }

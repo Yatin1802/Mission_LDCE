@@ -14,15 +14,12 @@ function check(e){
 
     if(isOptionSelected!= null){  
 
-        if(e.target.parentNode.className != 'options' && !IsCalculationDone)
+        if(e.target.parentNode.className != 'options')
         {
-            console.log("error: ");
-            console.log(e.target.parentNode.className);
-            console.log(e.target.parentNode);
             e.target.firstElementChild.checked = true;
         }
     }
-    console.log('after error:')
+
     console.log(e.target.closest('#optionsBox'));
 
     if(e.target.closest('.main-content')!=null){
@@ -38,17 +35,9 @@ function check(e){
 }
 
 function makeVisible(){
-    //document.getElementById('optionsBox').style.visibility = "hidden";
-//    if(document.getElementById('optionsBox').hidden){
 
-//    };
-  
-        //document.getElementById('optionsBox').style.color='rgb(66, 66, 66)';
-        //isVisible = false;
         document.getElementById('optionsBox').style.visibility='visible';
         document.getElementById('optionShow').style.visibility='hidden';
-    
-    
 }
 
 function hideOptions(){
@@ -57,98 +46,50 @@ function hideOptions(){
     document.getElementById('optionShow').style.visibility='visible';
 }
 
-
-function loadQuestions()
-{
-    document.getElementById("check").checked=false;
-    myFunction();
-    
-    if(localStorage.getItem('sessionValidity')=='true'){
-       const size_QB = AOBR_QB.length; //this measures the no. of row entries in the array
+function loadQuestions(){
+    hideEvaluation();
+    hideOptions();
+    const size_QB = Global_GFR.length; //this measures the no. of row entries in the array
     const randomArr = generateRandomNumbers(size_QB-1); // generates a random number array for selecting questions
     
-    loadQnA(randomArr); //this loads the question and correct answers array
+    loadQnA(randomArr);
+    console.log(Question_Arr);
+    console.log(Correct_Answers_Arr);
+    console.log(Selection_Options_Arr);
+
     User_Response.fill(0);
-   //set the Question Counter
     setQno();
     showQuestion();
     uncheckOptions();
     
-    hideEvaluation();
-    hideOptions(); 
-    }
-
-    else{
-        window.location.assign('index.html');
-    }
-
-    
 }
+
+//fills the Global Array of QnA and Correct Answers
+function loadQnA(randomArr){
+    // console.log(randomArr.length);
+    for(let i=0;i<randomArr.length-1;i++){
+        console.log(i);
+         Question_Arr.push(Global_GFR[randomArr[i]][0]); // the random entry is then pushed into global question array
+        //this stores the options for the particular question
+         for(let j =0;j<4;j++){
+            
+            Selection_Options_Arr.push(Global_GFR[randomArr[i]][j+1]);
+        }
+         
+         //console.log(Question_Arr);
+
+        Correct_Answers_Arr.push(Global_GFR[randomArr[i]][5]); //this is the array which contains correct answers
+      // console.log(Correct_Answers_Arr);
+    }
+   
+}
+
 function setQno()
 {
     if(Question_Counter<=10 && Question_Counter>0){
           document.getElementById('qno').innerHTML = Question_Counter;
     }
   
-}
-
-//this functions unchecks all radio button if anyone is in checked state
-function uncheckOptions(){
-    
-    let radioID = 'option';
-
-    for(let i = 1; i<=4;i++){
-        let radio_btn = document.getElementById(radioID+i);
-
-        if(radio_btn.checked){
-            radio_btn.checked=false;
-        }
-    }
-}
-
-//generates Random Number array of 10 elements between 0 and the number provided
-function generateRandomNumbers(max){
-    //console.log(max);
-    var arr = [];
-    let min = 0;
-    while(arr.length < 11){
-
-        var r = Math.floor(Math.random() * (max - min )) + min;
-        if(arr.indexOf(r) === -1) arr.push(r);
-    }
-   // console.log(arr);
-    return arr;
-}
-
-//fills the Global Array of QnA and Correct Answers
-function loadQnA(randomArr){
-    // console.log(randomArr.length);
-    for(let i=0;i<randomArr.length;i++){
-
-        let work_arr = AOBR_QB[randomArr[i]][1]; //assign the array of work item to a local array
-
-        let size_work = work_arr.length; //total no. of work item under a particular ministry/department
-        
-        let random_num = generateOneRandom(size_work); //generates a random number
-        
-        let question_Str = work_arr[random_num]; // from the work array, a random entry is selected
-
-        Question_Arr.push(question_Str); // the random entry is then pushed into global question array
-        //console.log(Question_Arr);
-
-        Correct_Answers_Arr.push(AOBR_QB[randomArr[i]][0]); //this is the array which contains correct answers
-      // console.log(Correct_Answers_Arr);
-    }
-   
-}
-
-function loadAgain(){
-    window.location.reload();
-}
-
-//Generates one Random Number between 0 and num
-function generateOneRandom(num){
-    return Math.floor(Math.random()*num);
 }
 
 //It shows the Question displayed
@@ -164,76 +105,36 @@ function showQuestion(){
         question.innerHTML = question.innerHTML.substring(1,strlen); // The * is being removed
     }  
     
-    loadOptions();
+    // loadOptions();
          
     showOptions();
-    hideOptions();
+    // hideOptions();
     //loadOptions();
 
 }
 
-//loads the Global Option Array as the user moves forward
-function loadOptions(){
-
-    if (Selection_Options_Arr.length<=40 && FromPrevious==0){
-        //console.log('fromPre'+ FromPrevious);
-        let size_QB = Options_DB.length-1; //Options DB contains the unique list of Department/Ministry
-
-        let randomArr = generateRandomNumbers(size_QB); //generate a random array 
-
-        let optionHolder =[]; //temporarily holds 4 options
-
-        let correctAnswer = Correct_Answers_Arr[Question_Counter-1];
-        
-        for(let i = 0; i<4;i++){
-
-            if(correctAnswer== Options_DB[randomArr[i]]){
-
-                randomArr[i]=generateOneRandom(size_QB);
-            }
-            optionHolder.push(Options_DB[randomArr[i]]);
-        }
-        optionHolder[generateOneRandom(4)] = correctAnswer;
-        
-        for(let i=0;i<4;i++){
-
-            Selection_Options_Arr.push(optionHolder[i]);
-        }
-
-    }
-
-    else{
-
-       // alert('Questions Complete');
-    }
-    
-    // console.log(optionHolder);
-    //console.log(Selection_Options_Arr);
-}
-
 function showOptions(){
-
 
     let radioID = "option";
 
-    for(let i = 1; i<=4;i++){
+        for(let i = 1; i<=4;i++){
+    
+            radioID = "#option"+i + ' + label';
+           // console.log(radioID);
+            document.querySelector(radioID).innerHTML = Selection_Options_Arr[(Question_Counter-1)*4+i-1];
+           // console.log(document.querySelector(radioID).innerHTML);
+            
+        }
 
-        radioID = "#option"+i + ' + label';
-       // console.log(radioID);
-        document.querySelector(radioID).innerHTML = Selection_Options_Arr[(Question_Counter-1)*4+i-1];
-       // console.log(document.querySelector(radioID).innerHTML);
-        
-    }
-    // console.log(Selection_Options_Arr);
-    // console.log(document.querySelector('#option1 + label').innerHTML);
 }
 
 //when the next button is clicked it loads the next question 
 function goNext(){
     
-   
-    //document.getElementById('optionsBox').style.visibility="hidden";
-    removeGreenClass();
+    
+    // document.getElementById('optionsBox').style.visibility="hidden";
+    // document.getElementById('optionShow').style.visibility='visible';
+    // removeGreenClass();
    // console.log('fromPrevious'+FromPrevious);
     
     //the user moves to next screen only if anything has been selected 
@@ -250,6 +151,7 @@ function goNext(){
 
        
         else{
+            hideOptions();
             Question_Counter+=1;
             
             setQno();
@@ -278,6 +180,74 @@ function goNext(){
     }
         
 }
+
+// function loadQuestions()
+// {
+//     localStorage.setItem('sessionValidity','true');
+//     if(localStorage.getItem('sessionValidity')=='true'){
+//        const size_QB = Globar_GFR.length; //this measures the no. of row entries in the array
+//     const randomArr = generateRandomNumbers(size_QB-1); // generates a random number array for selecting questions
+    
+//     loadQnA(randomArr); //this loads the question and correct answers array
+//     User_Response.fill(0);
+//    //set the Question Counter
+//     setQno();
+//     showQuestion();
+//     uncheckOptions();
+    
+//     hideEvaluation();
+//     hideOptions(); 
+//     }
+
+//     else{
+//         window.location.assign('index.html');
+//     }
+    
+// }
+// function setQno()
+// {
+//     if(Question_Counter<=10 && Question_Counter>0){
+//           document.getElementById('qno').innerHTML = Question_Counter;
+//     }
+  
+// }
+
+//this functions unchecks all radio button if anyone is in checked state
+function uncheckOptions(){
+    
+    let radioID = 'option';
+
+    for(let i = 1; i<=4;i++){
+        let radio_btn = document.getElementById(radioID+i);
+
+        if(radio_btn.checked){
+            radio_btn.checked=false;
+        }
+    }
+}
+
+// //generates Random Number array of 10 elements between 0 and the number provided
+function generateRandomNumbers(max){
+    console.log(max);
+    var arr = [];
+    let min = 0;
+    while(arr.length < 11){
+
+        var r = Math.floor(Math.random() * (max - min )) + min;
+        if(arr.indexOf(r) === -1) arr.push(r);
+    }
+   console.log(arr);
+    return arr;
+}
+
+function loadAgain(){
+    window.location.reload();
+}
+
+// //Generates one Random Number between 0 and num
+// function generateOneRandom(num){
+//     return Math.floor(Math.random()*num);
+// }
 
 function printSelectionArray(){
     
@@ -337,6 +307,7 @@ function store_Response(){
 function goPrevious(){
     
     removeGreenClass();
+    
 
     if(Question_Counter==1){
         alert('Not allowed');
@@ -357,6 +328,8 @@ function goPrevious(){
         }
         
     }
+    //showOptions();
+    makeVisible();
 }
 
 function restoreSelection(){
@@ -374,7 +347,6 @@ function showPreviousQuestions(){
     question.innerHTML = Question_Arr[Question_Counter-1];
 
     showOptions();
-    makeVisible();
 
 }
 
@@ -427,13 +399,12 @@ function setGreenclass(){
     {
         
        // console.log('here here hre');
-        radio.className ='right';   
+        radio.className ='right'   
         isCorrect = true;
     }
 
     else{
         removeGreenClass();
-        radio.className = 'wrong';
         setRedClass();
     }
 
@@ -456,7 +427,7 @@ function setCorrectAnswerGreen(){
         console.log(radio_btn.innerText.trim());
         if(radio_btn.innerText.trim() == Correct_Answers_Arr[Qnum].trim()){
             console.log("dharrrrrr");
-            removeGreenClass();
+           // removeGreenClass();
             radio_btn.classList.add('right');  
         }
 
@@ -470,9 +441,9 @@ function setRedClass(){
     let userInput = parseInt(User_Response[Qnum+1]);
 
     let radio = document.getElementById('option'+userInput).parentElement;
-    // removeGreenClass();
+
     radio.className = 'wrong';
-    // radio.classList.add('wrong');
+
     setCorrectAnswerGreen();
 
 }
@@ -527,6 +498,7 @@ function setResult(){
     result.style.flexDirection="column";
     result.style.fontSize = "0.9rem";
     
+    
     result.style.transition = 'all 1s ease-in';
     result.style.opacity = 0;
     setTimeout(()=>{result.style.opacity = 1;},700); 
@@ -569,30 +541,3 @@ function evaluationRemarks(right){
     }
 return remarks;
 }
-
-
-//Function for Side Menu
-function myFunction() {
-
-    var x = document.getElementById("myLinks");
-    var menu = document.getElementById("check");
-    var menuLabel = document.getElementById("H-menu");
-
-    x.style.visibility='hidden';
-    console.log(menu.checked);
-    if (menu.checked == true) {
-      // x.style.display = "block";
-      x.style.visibility='visible';
-      x.style.transform = "translateX(0%)";
-      menuLabel.style.transition = "all 0.4s ease-in";
-      menuLabel.style.transform = "translateX(240px)";
-      }
-
-    if (menu.checked == false) {
-        x.style.visibility='hidden';
-        x.style.transform = "translateX(-110%)";
-        menuLabel.style.transform = "translateX(0vw)";
-     
-      // x.style.display = "none";
-    }
-  }

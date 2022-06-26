@@ -1,6 +1,11 @@
 
 
 function loadMDO(){
+   
+    //this unchecks the side bar menu
+    document.getElementById("check").checked=false;
+    myFunction();
+
 
     // if(localStorage.getItem('sessionValidity')=='true'){
           document.getElementById('work_subHeading').style.display = "none";
@@ -148,3 +153,30 @@ function updateSubHeading(name){
 //     nextMDO();
 
 // }
+
+
+//Function for Side Menu
+function myFunction() {
+
+    var x = document.getElementById("myLinks");
+    var menu = document.getElementById("check");
+    var menuLabel = document.getElementById("H-menu");
+
+    x.style.visibility='hidden';
+    console.log(menu.checked);
+    if (menu.checked == true) {
+      // x.style.display = "block";
+      x.style.visibility='visible';
+      x.style.transform = "translateX(0%)";
+      menuLabel.style.transition = "all 0.4s ease-in";
+      menuLabel.style.transform = "translateX(240px)";
+      }
+
+    if (menu.checked == false) {
+        x.style.visibility='hidden';
+        x.style.transform = "translateX(-110%)";
+        menuLabel.style.transform = "translateX(0vw)";
+     
+      // x.style.display = "none";
+    }
+  }

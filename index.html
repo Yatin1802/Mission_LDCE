@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = no">
-    <meta http-equiv="refresh" content="500">
+    <meta http-equiv="refresh" content="2207">
     <!-- <link rel="shortcut icon" href="#"> -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
@@ -20,7 +20,49 @@
 </head>
 <body>
     
+    <!-- SIDE MENU -->
+
+    <div class="menuSide">
+
+		<div>
+			<label for="check" id="H-menu">
+
+			<input type="checkbox" name="menu-HM" id="check" class="H-menu">
+			<span></span>
+			<span></span>
+			<span></span>
+
+
+			</label>
+		</div>
+		
+
+		<div id="myLinks">
+            <p>MENU</p>
+			<div class="links-sidebar">
+				<a href="AoBR.html"><i class="material-symbols-outlined">fact_check</i><p>Complete AoBR</p></a>
+			</div>
+		    
+		    <div class="links-sidebar">
+		    	<a href="AoBR_Quiz.html"> <i class="material-symbols-outlined">quiz</i> <p>Test Quiz on AoBR</p> </a>
+		    </div>
+
+		    <div class="links-sidebar">
+		    	<a href="AoBR_lookUp.html"> <i class="material-symbols-outlined">manage_search</i><p>AoBR Lookup</p></a>
+		    </div>
+
+            <div style="text-align:center; margin-top: 2rem;"><a href="index.html" id="sideMenu-Button">Log Out</a></div>
+            
+		    
+		    
+	   </div>
+
+	</div>
+
+    <!-- SIDE MENU ENDS -->
+
     <header class="header bg-primary">
+         
         <div class="main-title" style="display:flex; gap: 0.5rem;">
             
             
@@ -30,6 +72,7 @@
         </div>
         <!-- <div class="right-title"> Question No: <span id="qno"></span> of 10</div> -->
     </header>
+
 
     <section class="main-content my-0">
 
@@ -74,7 +117,7 @@
                     <input type="password" id="passCode">
                 </div>
 
-                <button id="signIn">
+                <button id="signIn" class="glass">
                     Sign In
                 </button>
                 
@@ -113,7 +156,7 @@
 
             <div class="card" id="goQuiz">
                 <div class="cardTitle">
-                    <span class="material-symbols-outlined" style="font-size: 3rem;">fact_check</span>
+                    <span class="material-symbols-outlined" style="font-size: 3rem;">fact_check</spam>
                     
                 </div>
                 <p style="font-size: 1rem; color:rgb(144, 52, 67);">Department wise AoBR</p>
@@ -121,7 +164,7 @@
                     Ministry/Depatment wise items are sorted for quick navigation. The work items are comprehensive and important items are bold. 
                 </div>
 
-                <a href="AoBR.html" target="_blank" id="list_AOBR">Go To AoBR <span class="free">(Free Trial)</span></a>
+                <a href="AoBR.html" id="list_AOBR">Go To AoBR <span class="free">(Free Trial)</span></a>
             </div>
 
             <div class="card" id ="goAOBR">
@@ -133,7 +176,7 @@
                 <div class="cardDescription">
                     Randomized Quiz to test your retention capacity and identify the areas of improvement. 
                 </div>
-                <a href="AoBR_Quiz.html" target="_blank" id="quiz_AOBR">Go To Quiz</a>
+                <a href="AoBR_Quiz.html" id="quiz_AOBR">Go To Quiz</a>
                
             </div>
 
@@ -144,10 +187,10 @@
                 </div>
                 <p style="font-size: 1rem;color:rgb(144, 52, 67);">Subject Lookup</p>
                 <div class="cardDescription">
-                    Randomized Quiz to test your retention capacity and identify the areas of improvement. 
+                    Search for any subject item and see which Ministry/Department is dealing with it.   
                 </div>
 
-                <a href="AoBR_lookUp.html" target="_blank" id="lookup_AOBR">Go To Lookup</a>
+                <a href="AoBR_lookUp.html" id="lookup_AOBR">Go To Lookup</a>
             </div>
         </div>
 
@@ -198,6 +241,7 @@
         document.getElementById('signIn').addEventListener('keydown',checkValidity1);
         document.getElementById('btn_pricing').addEventListener('click',openModal);
         document.getElementsByClassName("close")[0].addEventListener('click',closeModal);
+        document.getElementById('H-menu').addEventListener('input',myFunction);
         // document.addEventListener('click', check);
         // document.getElementById('next').addEventListener('click',goNext);
         // document.getElementById('previous').addEventListener('click',goPrevious);

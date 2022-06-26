@@ -7,9 +7,11 @@
     <!-- <link rel="shortcut icon" href="#"> -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mainStyle.css">
     <link rel="stylesheet" href="Styles/AoBR.css">
     <link rel="stylesheet" href="Styles/lookup.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="questionDB.js"></script>
     <script src="JS/AoBR_lookup.js"></script>
     <!-- <script src="JS/AoBR.js"></script> -->
@@ -19,6 +21,47 @@
 
 <body>
     
+    <!-- SIDE MENU -->
+
+    <div class="menuSide">
+
+        <div>
+            <label for="check" id="H-menu">
+
+            <input type="checkbox" name="menu-HM" id="check" class="H-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+
+
+            </label>
+        </div>
+        
+
+        <div id="myLinks">
+            <p>MENU</p>
+            <div class="links-sidebar">
+                <a href="AoBR.html"><i class="material-symbols-outlined">fact_check</i><p>Complete AoBR</p></a>
+            </div>
+            
+            <div class="links-sidebar">
+                <a href="AoBR_Quiz.html"> <i class="material-symbols-outlined">quiz</i> <p>Test Quiz on AoBR</p> </a>
+            </div>
+
+            <div class="links-sidebar">
+                <a href="AoBR_lookUp.html"> <i class="material-symbols-outlined">manage_search</i><p>AoBR Lookup</p></a>
+            </div>
+
+            <div style="text-align:center;"><button id="sideMenu-Button" class="btn_pricing">Log Out</button></div>
+            
+            
+            
+    </div>
+
+    </div>
+
+    <!-- SIDE MENU ENDS -->
+
     <header class="header AoBR_Title">
       
             AoBR Subject Lookup 
@@ -79,6 +122,7 @@
 
         document.addEventListener('DOMContentLoaded', loadAllWorkItems);
         document.getElementById('search_input').addEventListener('input',loadLookupTable);
+        document.getElementById('H-menu').addEventListener('input',myFunction);
         // document.getElementById('next_MDO').addEventListener('click',showNext);
 
     </script>

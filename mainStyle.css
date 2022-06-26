@@ -27,6 +27,7 @@ h4{
 
 #mainIntro{
     /* margin: 0.7rem; */
+    /* margin-top: 2.5rem; */
     font-size: 0.8rem;
     line-height: 1.5rem;
     display: flex;
@@ -76,8 +77,18 @@ h4{
     gap: 2rem;
     flex-direction: column;
     font-size: 1rem;
-    padding: 0.5rem;
+    padding: 1rem 1.5rem;
     align-items: center;
+
+    border: 1px solid;
+
+    /* From https://css.glass */
+background: rgba(255, 251, 251, 0.2);
+border-radius: 10px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #loginSubSection label{
@@ -105,8 +116,8 @@ h4{
     width: 40%;
     text-align: center;
     /* background: linear-gradient(330deg, rgb(108, 218, 233) 0%, rgb(227, 228, 222) 100%); */
-    background: linear-gradient(0deg, rgb(242, 192, 192) 0%, rgb(244, 224, 224) 100%);
-    color: rgb(118, 59, 39);
+    /* background: #fff; */
+    color: rgb(138, 62, 44);
     border-radius: 5px;
     margin-top: 10px;
 }
@@ -138,9 +149,10 @@ iframe{
     width: 60%;
     margin: 0.5rem auto;
     /* background: linear-gradient(330deg, rgb(108, 218, 233) 0%, rgb(227, 228, 222) 100%); */
-    background: linear-gradient(0deg, rgb(242, 192, 192) 0%, rgb(244, 224, 224) 100%);
+    /* background: linear-gradient(0deg, rgb(242, 192, 192) 0%, rgb(244, 224, 224) 100%); */
+    background: #fff;
     color: rgb(118, 59, 39);
-    padding: 0.3rem;
+    padding: 0.5rem;
     border-radius: 5px;
     font-size: 0.9rem;
     margin-top: 1.5rem;
@@ -176,7 +188,7 @@ iframe{
     gap: 1rem;
     flex-direction: column;
     /* background: linear-gradient(330deg, rgb(234, 255, 255) 0%, rgb(237, 247, 247) 100%); */
-    background: linear-gradient(0deg, rgba(244, 158, 158, 0.26) 0%, rgba(243, 111, 137, 0.696) 100%);
+    background: linear-gradient(0deg, rgba(253, 150, 150, 0.26) 0%, rgba(253, 138, 161, 0.696) 100%);
     width: 70%;
     color: rgb(203, 128, 128);
     padding: 0.5rem;
@@ -208,6 +220,18 @@ iframe{
     margin: auto;
     text-align: center;
     margin-bottom: 10px;
+
+    
+  }
+
+  .card a:hover{
+        /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.2px);
+    -webkit-backdrop-filter: blur(7.2px);
+    border: 1px solid rgba(235, 27, 27, 0.21);
   }
 
   .free{
@@ -224,6 +248,193 @@ iframe{
   footer{
     background: linear-gradient(150deg, rgb(236, 113, 135) 0%, rgb(251, 203, 196) 100%);
   }
+
+
+  /* glass effect */
+
+  .glass{
+    position: relative;
+	display: inline-block;
+    /* padding: 15px 25px; */
+	/* background-color: green; for compatibility with older browsers */
+	background: linear-gradient(rgb(252, 226, 220),rgb(252, 124, 124)); 
+    border-radius: 3px;
+    box-shadow: 0px 1px 4px -2px rgb(255, 143, 143);
+    /* text-shadow: 0px -1px rgb(255, 66, 66);    */
+  }
+
+  .glass:after{
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: calc(100% - 4px);
+	height: 50%;
+	background: linear-gradient(rgba(234, 230, 230, 0.8), rgba(255, 255, 255, 0.2));
+}
+
+
+/* SIDE MENU CSS */
+
+.menuSide{
+	position: relative;
+	display: flex;
+	/*flex-wrap: nowrap;*/
+  z-index: 2;
+  /* display: none; */
+
+}
+
+
+input[type="checkbox"]{
+  display:none;
+}
+
+
+#H-menu{
+  display:flex;
+  flex-direction:column;
+  width:40px;
+  cursor:pointer;
+  position: absolute;
+  left: 0%;
+  top: 20px;
+  z-index: 3;
+  margin: 10px;
+  /* border: 1px solid rgb(230, 52, 33); */
+  
+}
+  
+
+label span{
+	background: #bd3131;
+	border-radius:4px;
+  	height:4px;
+  	 margin: 3px 0;
+  	 transition: .4s  ease-in/*cubic-bezier(0.68, -0.6, 0.32, 1.6)*/;
+  }
+
+.menuSide span:nth-of-type(1){
+  width:50%;
+  
+}
+
+.menuSide span:nth-of-type(2){
+  width:100%;
+}
+
+
+.menuSide span:nth-of-type(3){
+  width:75%;
+ 
+}
+
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(1){
+  transform-origin:bottom;
+  transform:rotatez(45deg) translate(4px,2px);
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(2){
+  
+  transform-origin:top;
+  transform:rotatez(-45deg);
+  width: 75%;
+}
+
+
+input[type="checkbox"]:checked ~ span:nth-of-type(3){
+  
+  transform-origin:bottom;
+  width:50%;
+  transform: translate(9px,-8px) rotatez(45deg);
+
+}
+
+#myLinks{
+	background: rgb(255, 255, 255);
+	width: 300px;
+	padding: 0 0.5rem;
+	transform: translateX(-110%);
+	/* display: none; */
+  visibility: hidden;
+	transition: all 0.4s ease-in;
+	position: absolute;
+	height: 100vh;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: solid 1px #ac5151;
+  box-shadow: 5px 5px #ac5151;
+  padding-top: 2rem;
+  color: #921e1e;
+
+}
+
+#myLinks>p{
+  letter-spacing: 1.5px;
+  /* font-weight: 700; */
+  font-size: 1.5rem;
+}
+
+
+#sideMenu-Button{
+  background: #fff;
+    color: rgb(118, 59, 39);
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid firebrick;
+
+}
+
+#sideMenu-Button:hover,
+#sideMenu-Button:focus{
+  background: firebrick;
+  color: white;
+}
+
+.links-sidebar{
+	margin: 0.8rem 0;
+	font-size: 1.2rem;
+  padding: 0.8rem;
+  border-radius: 5px;
+  /* display: flex;
+  flex-direction: row; */
+  align-content:center;
+  /* Created with https://www.css-gradient.com */
+
+background: rgba(252, 213, 224, 1.0);
+background: -webkit-linear-gradient(left, rgba(252, 213, 224, 1.0), rgba(249, 249, 249, 1.0));
+background: -moz-linear-gradient(left, rgba(252, 213, 224, 1.0), rgba(249, 249, 249, 1.0));
+background: linear-gradient(to right, rgb(252, 230, 236), rgba(249, 249, 249, 0.8));
+	
+}
+
+.links-sidebar a{
+	text-decoration: none;
+	color: rgb(129, 11, 11);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+.links-sidebar a:hover,
+.links-sidebar a:focus{
+	color: rgb(255, 4, 104);
+}
+
+.links-sidebar a>p{
+  padding: 0 10px;
+}
+
+.links-sidebar a>i{
+  font-size: 2rem;
+}
+
+
+/* SIDE MENU CSS ENDS */
 
 /* ****Modal button****** */
 
