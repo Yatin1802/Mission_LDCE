@@ -19,7 +19,7 @@ function loadAllWorkItems(){
     }
 
     else{
-        location.assign('Mission_LDCE/index.html');
+        location.assign('index.html');
     }
   
 }
