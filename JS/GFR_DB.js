@@ -40,10 +40,9 @@ var Global_GFR = [
     ['Consider the following statements with regards to "CAPEX Model". (1) Capital expenditure(CE) is used by the buyer to straightway purchase goods (2) Procurement of consumables by the buyer after incurring CE (3) Arrangement of comprehensive maintenance contract after warranty period. (4) Disposal of the product after useful life. Which of the above is/are correct?','1 only ','1,2 & 3 only','1,2,3 and 4','2, 3 and 4 only','2, 3 and 4 only','-'],
     ['Which of the following activity(ies) is/are done by the seller in OPEX Model? (1) Provision of Goods (2) Maintenance of Goods (3) Provision of Consumables as required (4) Insurance of Goods (5) Takeing back of goods after useful/contracted life.','1,2,3 and 4','1,2,3 and 5','2,3 and 4','1,3,4 and 5','1,3,4 and 5','-'],
     ['Who will ensure that the receipts and dues of the Government are correcity and promptly assessed, collected and duty credited to the Consolidated Fund or Public Account, as the case may be?','Finance Ministry','Controller General of Accounts','Department of the Central Government ','D/o Revenue','Controller General of Accounts','-'],
-    ['All money received by or on behalf of the Government either as dues of Government or for deposits, remittance or otherwise, shall be brought into Govt. Account without delay in accordance with such general or special rules issued under ...... of the Constitution Article 150 Article 283(1)','1 only ','2 only','Both 1 & 2','Neither 1 nor 2','4','-']
-    
-    
-    
+    ['All money received by or on behalf of the Government either as dues of Government or for deposits, remittance or otherwise, shall be brought into Govt. Account without delay in accordance with such general or special rules issued under ...... of the Constitution Article 150 Article 283(1)','1 only ','2 only','Both 1 & 2','Neither 1 nor 2','4','-'],
+    ['Liaison with international Agri-Organisations like Food and Agriculture organisation of the United Nations, handling of CARE goods concerning agriculture, etc.','Department Of Agriculture And Farmers Welfare, Ministry Of Agriculture And Farmers Welfare','Department Of Agricultural Research And Education , Ministry Of Agriculture And Farmers Welfare','Department Of Fertilizers, Ministry Of Chemicals And Fertilizers','Department Of Food And Public Distribution, Ministry Of Consumer Affairs, Food And Public Distribution','Department Of Agriculture And Farmers Welfare, Ministry Of Agriculture And Farmers Welfare','-']
+
 
 
 ];

@@ -2,12 +2,13 @@
 footer{
     /* background: linear-gradient(330deg, rgba(21,148,142,1) 0%, rgba(39,3,113,1) 100%); */
     padding: 0.8em 0.8em;
-    margin-top:1rem;
+    margin:1rem auto;
     color: white;
    position: fixed;
    left: 0;
+   right: 0;
    bottom: 0;
-   width: 100%;
+   width: 45%;
    font-size: 1rem;
 }
 
